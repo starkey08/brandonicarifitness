@@ -1,10 +1,9 @@
 // components/clients.tsx
-import React, {MouseEventHandler} from 'react';
-import Card from '../components/Card'
+import Card from '../components/ClientCard'
+import React from "react";
 const Clients: React.FC = () => {
-    const handleClick: MouseEventHandler = (event) => {
-        console.log('clicked');
-        console.log(event);
+    const handleClick = (id:number) => {
+        console.log(id);
     };
 
     return (
@@ -13,11 +12,15 @@ const Clients: React.FC = () => {
             {/* Add content for the home page */}
 
             <div className="row">
-                <Card id={1} title="Brandon Jones" description="Brandon's Training Card" subtitle="Just getting fit!" onClick={handleClick}></Card>
-                <Card id={2} title="Veronica Jones" description="Veronica's Training Card" subtitle="Workout like a beast!" onClick={handleClick}></Card>
+                <Card id={1} clientName="Brandon Jones" injuries="Right Arm" goals="Balanced strength" favoriteQuote="42" startDate="8/26/1977" onClick={handleClick}></Card>
+                <Card id={2} clientName="Veronica Jones" injuries="Inflated Ego" goals="Rule the world" favoriteQuote="Brandon, that's gross!" startDate="1/1/2026" onClick={handleClick}></Card>
             </div>
         </div>
     );
 };
 
 export default Clients;
+
+//date started
+//injuries
+//goals
