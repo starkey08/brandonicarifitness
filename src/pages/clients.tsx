@@ -1,10 +1,18 @@
 // components/clients.tsx
 import Card from '../components/ClientCard'
 import React from "react";
+import { useNavigate } from "react-router-dom";
 const Clients: React.FC = () => {
     const handleClick = (id:number) => {
         console.log(id);
+        routeChange(id);
     };
+
+    const navigate = useNavigate();
+    const routeChange = (id:number) =>{
+        const path = `/clientDetail/` + id;
+        navigate(path);
+    }
 
     return (
         <div>
